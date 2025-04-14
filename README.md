@@ -90,3 +90,22 @@ This project is a simple **e-commerce system** where customers can place orders 
      - **Order Fulfillment**: Verify that an order is marked as fulfilled.
      - **Concurrency Handling**: Simulate two concurrent orders and ensure only one succeeds.
      - **Retry Logic**: Ensure retry attempts are made if fulfillment fails.
+
+___
+### Key Design Decisions
+
+- **Separation of Concerns**: Divided the system into clear layers (controllers, services, data access) for better maintainability and scalability.
+- **Dependency Injection**: Used to decouple components, making the system modular and easier to test.
+- **SOLID Principles**: Ensured each class has a single responsibility, improving flexibility and reducing the impact of changes.
+- **Testability**: The design allows easy substitution of components with mocks or stubs for unit testing, ensuring reliable tests.
+___
+### Handling Concurrency and Asynchronous Processing
+
+- **Concurrency Handling**:
+  - Used **thread-safe operations** with locks to ensure inventory updates are correct when multiple orders are placed for the same product.
+  - Prevents race conditions and ensures data consistency during simultaneous transactions.
+
+- **Asynchronous Processing**:
+  - Order fulfillment is processed **asynchronously** using a background service, preventing UI or other API requests from being blocked.
+  - Implements a **retry mechanism** to handle temporary failures during order processing, improving system reliability.
+
