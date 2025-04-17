@@ -60,10 +60,9 @@ This project is a simple **e-commerce system** where customers can place orders 
      - **POST /api/Order**  
      - **Input**: Provide a JSON body with the order details, including `OrderItems`:
        ```json
- [
-    { "productId": 1, "quantity": 2 },
-    { "productId": 2, "quantity": 1 }
-]
+         [
+           { "productId": 1, "quantity": 2 }
+         ]
 
        ```
 
